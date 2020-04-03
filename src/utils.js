@@ -8,7 +8,6 @@ function getUserId(context) {
     const { userId } = jwt.verify(token, APP_SECRET);
     return userId;
   }
-
   throw new Error('Not authenticated')
 }
 

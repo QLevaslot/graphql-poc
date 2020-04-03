@@ -40,8 +40,6 @@ const login = async (parent, args, context, info) => {
     throw new Error('Invalid password')
   }
   const token = jwt.sign({userId: user.id}, APP_SECRET);
-
-  // 3
   return {
     token,
     user,
@@ -54,4 +52,4 @@ module.exports = {
   post,
   updateLink,
   deleteLink,
-}
+};
