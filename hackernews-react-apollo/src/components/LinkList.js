@@ -22,16 +22,14 @@ class LinkList extends Component {
       <Query query={FEED_QUERY}>
         {({ loading, error, data }) => {
           console.log(error);
-          if (loading) return <div>Fetching</div>
-          if (error) return <div>Error</div>
-
-          const linksToRender = data.feed.links
-
+          if (loading) return <div>Fetching</div>;
+          if (error) return <div>Error</div>;
+          const linksToRender = data.feed.links;
           return (
             <div>
               {linksToRender.map(link => <Link key={link.id} link={link} />)}
             </div>
-          )
+          );
         }}
       </Query>
     );
